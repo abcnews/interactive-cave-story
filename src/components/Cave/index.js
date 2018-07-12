@@ -1,7 +1,7 @@
 const React = require('react');
 const styles = require('./styles.scss');
 
-const CAVE_IMG = require('./cave.svg');
+const CAVE_IMG = require('./cave.png');
 const WIDTH = 1800;
 const HEIGHT = 3588;
 
