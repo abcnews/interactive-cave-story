@@ -35,8 +35,13 @@ class Cave extends React.Component {
     const height = HEIGHT * ratio;
 
     const isLandscape = window.innerWidth > window.innerHeight;
-    const shiftOffset = isLandscape ? 50 : 100;
+    let shiftOffset = isLandscape ? 50 : 100;
     const scale = isLandscape ? 0.7 : 1;
+
+    // Ensure the highlighted section is actually in view
+    if (y - shift > window.innerHeight) {
+      shiftOffset -= (y - shift) / 2;
+    }
 
     const transform = `scale(${scale}) translateY(${shiftOffset - shift * scale * ratio}px)`;
 
