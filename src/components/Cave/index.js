@@ -43,7 +43,7 @@ class Cave extends React.Component {
       shiftOffset -= (y - shift) / 2;
     }
 
-    const moveLeft = window.innerWidth > 400 ? window.innerWidth / 4 : 0;
+    const moveLeft = window.innerWidth >= 1024 ? window.innerWidth / 4 : 0;
     const transform = `translateX(-${moveLeft}px) scale(${scale}) translateY(${shiftOffset - shift * scale * ratio}px)`;
 
     return (
