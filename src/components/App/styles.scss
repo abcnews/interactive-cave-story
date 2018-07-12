@@ -2,13 +2,32 @@
   background-color: #1c2121 !important;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 1023px) {
+  .panel {
+    &:before {
+      background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    img {
+      display: inherit !important;
+      margin: auto !important;
+      max-width: 90% !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
   .panel {
     margin-right: calc(30% - 24.75rem);
     width: 49.5rem;
 
+    &:before {
+      background: none !important;
+    }
+
     img {
       max-width: 60%;
+      margin: auto;
     }
   }
 }

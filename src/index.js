@@ -8,20 +8,16 @@ const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller
 
 // Fix image sizes
 scrollyteller.panels.forEach(panel => {
-  panel.nodes = panel.nodes.map(node => {
+  panel.nodes.forEach(node => {
     if (node.tagName === 'IMG') {
       node.removeAttribute('width');
       node.removeAttribute('height');
-      let p = document.createElement('p');
-      p.appendChild(node);
-      return p;
+    } else {
+      [].slice.call(node.querySelectorAll('img')).forEach(img => {
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+      });
     }
-
-    [].slice.call(node.querySelectorAll('img')).forEach(img => {
-      img.removeAttribute('width');
-      img.removeAttribute('height');
-    });
-    return node;
   });
 });
 
