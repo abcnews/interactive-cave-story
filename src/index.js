@@ -6,6 +6,25 @@ const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
 
 const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('cave', 'u-full', 'mark');
 
+// Fix image sizes
+scrollyteller.panels.forEach(panel => {
+  panel.nodes = panel.nodes.map(node => {
+    if (node.tagName === 'IMG') {
+      node.removeAttribute('width');
+      node.removeAttribute('height');
+      let p = document.createElement('p');
+      p.appendChild(node);
+      return p;
+    }
+
+    [].slice.call(node.querySelectorAll('img')).forEach(img => {
+      img.removeAttribute('width');
+      img.removeAttribute('height');
+    });
+    return node;
+  });
+});
+
 function init() {
   const App = require('./components/App');
   render(<App scrollyteller={scrollyteller} />, scrollyteller.mountNode);

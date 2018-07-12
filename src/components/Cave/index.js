@@ -34,11 +34,15 @@ class Cave extends React.Component {
     const width = WIDTH * ratio;
     const height = HEIGHT * ratio;
 
-    const transform = `translateY(${50 - shift * ratio}px)`;
+    const isLandscape = window.innerWidth > window.innerHeight;
+    const shiftOffset = isLandscape ? 50 : 100;
+    const scale = isLandscape ? 0.7 : 1;
+
+    const transform = `scale(${scale}) translateY(${shiftOffset - shift * scale * ratio}px)`;
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.transformer} style={{ width, height, transform }}>
+        <div className={styles.transformer} style={{ width, height, transform, transformOrigin: `50% 0px` }}>
           <img src={CAVE_IMG} style={{ width, height, maxWidth: '1000%' }} />
           {x > 0 &&
             y > 0 && (
