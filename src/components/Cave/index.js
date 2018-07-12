@@ -35,15 +35,16 @@ class Cave extends React.Component {
     const height = HEIGHT * ratio;
 
     const isLandscape = window.innerWidth > window.innerHeight;
-    let shiftOffset = isLandscape ? 50 : 100;
-    const scale = isLandscape ? 0.7 : 1;
+    let shiftOffset = isLandscape ? 100 : 100;
+    const scale = isLandscape ? 0.5 : 1;
 
     // Ensure the highlighted section is actually in view
     if (y - shift > window.innerHeight) {
       shiftOffset -= (y - shift) / 2;
     }
 
-    const transform = `scale(${scale}) translateY(${shiftOffset - shift * scale * ratio}px)`;
+    const moveLeft = window.innerWidth > 400 ? window.innerWidth / 3 : 0;
+    const transform = `scale(${scale}) translateX(-${moveLeft}px) translateY(${shiftOffset - shift * scale * ratio}px)`;
 
     return (
       <div className={styles.wrapper}>
@@ -54,7 +55,7 @@ class Cave extends React.Component {
               <img
                 src={LOCATION_IMG}
                 className={styles.location}
-                style={{ top: y * ratio + 'px', left: x * ratio + 'px', maxWidth: `${180 * ratio}px` }}
+                style={{ top: y * ratio + 'px', left: x * ratio + 'px', maxWidth: `${200 * ratio}px` }}
               />
             )}
         </div>
