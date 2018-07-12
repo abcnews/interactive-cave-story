@@ -17,6 +17,11 @@ scrollyteller.panels.forEach(panel => {
         img.removeAttribute('width');
         img.removeAttribute('height');
       });
+      [].slice.call(node.querySelectorAll('a')).forEach(a => {
+        if (a.querySelector('img')) {
+          a.removeAttribute('href');
+        }
+      });
     }
   });
 });

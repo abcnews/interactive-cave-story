@@ -25,6 +25,10 @@
       background: none !important;
     }
 
+    :global(.infographic) {
+      text-align: center !important;
+    }
+
     img {
       display: inherit !important;
       max-width: 60% !important;
