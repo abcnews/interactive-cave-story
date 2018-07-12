@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App It renders 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="AC_W_aNL Block is-richtext is-piecemeal scrollyteller"
+  >
+    <div
+      className="sgMpdhCf zteFRtuv "
+    >
+      <div
+        className="wrapper"
+      >
+        <div
+          className="transformer"
+          style={
+            Object {
+              "height": 1656.8259587020648,
+              "transform": "translateY(NaNpx)",
+              "width": 1024,
+            }
+          }
+        >
+          <img
+            src="cave.svg"
+            style={
+              Object {
+                "height": 1656.8259587020648,
+                "maxWidth": "1000%",
+                "width": 1024,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

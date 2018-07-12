@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Keyshape -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 205 205" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" style="white-space: pre;">
+    <style>
+@keyframes a0_t { 0% { transform: scale(0.5,0.5); } 65.2173% { transform: scale(0.5,0.5); animation-timing-function: steps(1); } 65.2608% { transform: scale(0.5,0.5); } 100% { transform: scale(0.5,0.5); } }
+@keyframes a1_t { 0% { transform: scale(0.5,0.5); } 65.2173% { transform: scale(2,2); } 100% { transform: scale(2,2); } }
+@keyframes a1_o { 0% { opacity: 1; } 21.7391% { opacity: 1; } 65.2174% { opacity: 0; } 100% { opacity: 0; } }
+    </style>
+    <g id="Blip" clip-rule="evenodd" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" transform="translate(76.5,76.5) translate(25.5,25.5)">
+        <ellipse rx="51" ry="51" fill="none" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="12" opacity="1" transform="translate(0,0) scale(0.5,0.5)" style="animation: a0_t 2.3s linear infinite both;"/>
+        <ellipse rx="51" ry="51" fill="none" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="7" opacity="1" transform="translate(0,0) scale(0.5,0.5)" style="animation: a1_t 2.3s linear infinite both, a1_o 2.3s linear infinite both;"/>
+    </g>
+</svg>
