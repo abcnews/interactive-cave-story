@@ -1,7 +1,7 @@
 {
   "name": "interactive-cave-story",
   "version": "1.0.6",
-  "description": "A project generated from aunty's react app template.",
+  "description": "The interactive map scrollyteller component of Into the cave",
   "license": "MIT",
   "private": true,
   "contributors": [
