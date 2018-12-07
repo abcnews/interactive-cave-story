@@ -4,7 +4,7 @@
 
 @media (max-width: 1023px) {
   .panel {
-    &:before {
+    > * {
       background: rgba(0, 0, 0, 0.8) !important;
     }
 
@@ -18,10 +18,7 @@
 
 @media (min-width: 1024px) {
   .panel {
-    margin-right: calc(30% - 24.75rem) !important;
-    width: 49.5rem !important;
-
-    &:before {
+    > * {
       background: none !important;
     }
 

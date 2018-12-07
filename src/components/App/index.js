@@ -40,9 +40,10 @@ class App extends React.Component {
       <div className={styles.root}>
         <Scrollyteller
           panels={scrollyteller.panels}
-          className={`Block is-richtext is-piecemeal ${styles.scrollyteller}`}
-          panelClassName={`Block-content u-layout u-richtext-invert ${styles.panel}`}
-          onMarker={this.onMarker}>
+          className={`Block is-piecemeal has-right ${styles.scrollyteller}`}
+          panelClassName={`Block-content u-richtext-invert is-right ${styles.panel}`}
+          onMarker={this.onMarker}
+        >
           <Cave config={this.state.config} />
         </Scrollyteller>
       </div>
