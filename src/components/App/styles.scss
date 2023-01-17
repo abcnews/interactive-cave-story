@@ -2,38 +2,23 @@
   background-color: #1c2121 !important;
 }
 
-@media (max-width: 1023px) {
-  .panel {
-    > * {
-      background: rgba(0, 0, 0, 0.8) !important;
-    }
-
-    img {
-      display: inherit !important;
-      margin: auto !important;
-      max-width: 90% !important;
-    }
-  }
+.panel {
+  --color-panel-background: rgba(0, 0, 0, 0.8);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   .panel {
-    > * {
-      background: none !important;
-    }
-
-    :global(.infographic) {
-      text-align: center !important;
-    }
-
-    img {
-      display: inherit !important;
-      max-width: 60% !important;
-      margin: auto !important;
-    }
+    --color-panel-background: transparent;
+    margin-right: 10%;
   }
 }
 
 .panel:last-of-type {
   margin-bottom: 100vh !important;
+}
+
+.panel img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90% !important;
 }

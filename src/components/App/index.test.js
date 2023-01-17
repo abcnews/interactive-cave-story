@@ -1,12 +1,10 @@
-const React = require('react');
-const renderer = require('react-test-renderer');
-
-const App = require('.');
+import React from 'react';
+import { create } from 'react-test-renderer';
+import App from '.';
 
 describe('App', () => {
   test('It renders', () => {
-    const scrollyteller = { panels: [] };
-    const component = renderer.create(<App scrollyteller={scrollyteller} />);
+    const component = create(<App panels={[]} />);
 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

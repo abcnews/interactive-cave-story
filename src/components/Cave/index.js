@@ -1,11 +1,10 @@
-const React = require('react');
-const styles = require('./styles.scss');
+import React from 'react';
+import CAVE_IMG from './cave.png';
+import LOCATION_IMG from './location.svg';
+import styles from './styles.scss';
 
-const CAVE_IMG = require('./cave.png');
 const WIDTH = 1800;
 const HEIGHT = 3588;
-
-const LOCATION_IMG = require('./location.svg');
 
 class Cave extends React.Component {
   constructor(props) {
@@ -44,24 +43,32 @@ class Cave extends React.Component {
     }
 
     const moveLeft = window.innerWidth >= 1024 ? window.innerWidth / 4 : 0;
-    const transform = `translateX(-${moveLeft}px) scale(${scale}) translateY(${shiftOffset - shift * scale * ratio}px)`;
+    const transform = `translateX(-${moveLeft}px) scale(${scale}) translateY(${
+      shiftOffset - shift * scale * ratio
+    }px)`;
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.transformer} style={{ width, height, transform, transformOrigin: `50% 0px` }}>
+        <div
+          className={styles.transformer}
+          style={{ width, height, transform, transformOrigin: `50% 0px` }}
+        >
           <img src={CAVE_IMG} style={{ width, height, maxWidth: '1000%' }} />
-          {x > 0 &&
-            y > 0 && (
-              <img
-                src={LOCATION_IMG}
-                className={styles.location}
-                style={{ top: y * ratio + 'px', left: x * ratio + 'px', maxWidth: `${200 * ratio}px` }}
-              />
-            )}
+          {x > 0 && y > 0 && (
+            <img
+              src={LOCATION_IMG}
+              className={styles.location}
+              style={{
+                top: y * ratio + 'px',
+                left: x * ratio + 'px',
+                maxWidth: `${200 * ratio}px`
+              }}
+            />
+          )}
         </div>
       </div>
     );
   }
 }
 
-module.exports = Cave;
+export default Cave;

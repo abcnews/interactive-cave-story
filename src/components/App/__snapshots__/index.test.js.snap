@@ -2,38 +2,32 @@
 
 exports[`App It renders 1`] = `
 <div
-  className="root"
+  className="index-module_base__2Ie5h "
 >
   <div
-    className="AC_W_aNL Block is-richtext is-piecemeal scrollyteller"
+    className="index-module_graphic__QVyjs index-module_before__1gOjV"
   >
-    <div
-      className="sgMpdhCf zteFRtuv "
-    >
+    <div>
       <div
-        className="wrapper"
+        style={
+          Object {
+            "height": 2041.1733333333334,
+            "transform": "translateX(-256px) scale(0.3) translateY(NaNpx)",
+            "transformOrigin": "50% 0px",
+            "width": 1024,
+          }
+        }
       >
-        <div
-          className="transformer"
+        <img
+          src="cave.png"
           style={
             Object {
-              "height": 1656.8259587020648,
-              "transform": "translateY(NaNpx)",
+              "height": 2041.1733333333334,
+              "maxWidth": "1000%",
               "width": 1024,
             }
           }
-        >
-          <img
-            src="cave.svg"
-            style={
-              Object {
-                "height": 1656.8259587020648,
-                "maxWidth": "1000%",
-                "width": 1024,
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>

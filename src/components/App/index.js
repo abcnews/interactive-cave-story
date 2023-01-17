@@ -1,8 +1,7 @@
-const React = require('react');
-const Scrollyteller = require('@abcnews/scrollyteller');
-const Cave = require('../Cave');
-
-const styles = require('./styles.scss');
+import Scrollyteller from '@abcnews/scrollyteller';
+import React from 'react';
+import Cave from '../Cave';
+import styles from './styles.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,21 +33,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { scrollyteller } = this.props;
+    const { panels } = this.props;
 
     return (
-      <div className={styles.root}>
-        <Scrollyteller
-          panels={scrollyteller.panels}
-          className={`Block is-piecemeal has-right ${styles.scrollyteller}`}
-          panelClassName={`Block-content u-richtext-invert is-right ${styles.panel}`}
-          onMarker={this.onMarker}
-        >
-          <Cave config={this.state.config} />
-        </Scrollyteller>
-      </div>
+      <Scrollyteller
+        panels={panels}
+        // className={`Block is-piecemeal has-right ${styles.scrollyteller}`}
+        className={styles.scrollyteller}
+        // panelClassName={`Block-content u-richtext-invert is-right ${styles.panel}`}
+        panelClassName={styles.panel}
+        onMarker={this.onMarker}
+      >
+        <Cave config={this.state.config} />
+      </Scrollyteller>
     );
   }
 }
 
-module.exports = App;
+export default App;

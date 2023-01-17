@@ -5,3 +5,4 @@ The interactive map scrollyteller component from [Into the cave](http://www.abc.
 ## Authors
 
 - Nathan Hoad ([hoad.nathan@abc.net.au](mailto:hoad.nathan@abc.net.au))
+- Colin Gourlay ([Gourlay.Colin@abc.net.au](mailto:Gourlay.Colin@abc.net.au))

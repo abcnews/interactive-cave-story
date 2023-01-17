@@ -1,49 +1,26 @@
-const React = require('react');
-const { render } = require('react-dom');
+import { whenOdysseyLoaded } from '@abcnews/env-utils';
+import { loadScrollyteller } from '@abcnews/scrollyteller';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './components/App';
 
-const PROJECT_NAME = 'interactive-cave-story';
-const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
+whenOdysseyLoaded.then(() => {
+  const { mountNode, panels } = loadScrollyteller('cave', 'u-full');
 
-const scrollyteller = require('@abcnews/scrollyteller').loadOdysseyScrollyteller('cave', 'u-full', 'mark');
+  // Pluck illustration images from PL figures
+  panels.forEach(panel => {
+    panel.nodes.forEach(node => {
+      if (node.tagName === 'FIGURE') {
+        const imgEl = node.querySelector('img');
+        const pEl = document.createElement('p');
 
-// Fix image sizes
-scrollyteller.panels.forEach(panel => {
-  panel.nodes.forEach(node => {
-    if (node.tagName === 'IMG') {
-      node.removeAttribute('width');
-      node.removeAttribute('height');
-    } else {
-      [].slice.call(node.querySelectorAll('img')).forEach(img => {
-        img.removeAttribute('width');
-        img.removeAttribute('height');
-      });
-      [].slice.call(node.querySelectorAll('a')).forEach(a => {
-        if (a.querySelector('img')) {
-          a.removeAttribute('href');
-        }
-      });
-    }
+        imgEl.removeAttribute('width');
+        imgEl.removeAttribute('height');
+        pEl.appendChild(imgEl);
+        panel.nodes.splice(panel.nodes.indexOf(node), 1, pEl);
+      }
+    });
   });
+
+  render(<App panels={panels} />, mountNode);
 });
-
-function init() {
-  const App = require('./components/App');
-  render(<App scrollyteller={scrollyteller} />, scrollyteller.mountNode);
-}
-
-init();
-
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    try {
-      init();
-    } catch (err) {
-      const ErrorBox = require('./components/ErrorBox');
-      render(<ErrorBox error={err} />, root);
-    }
-  });
-}
-
-if (process.env.NODE_ENV === 'development') {
-  console.debug(`[${PROJECT_NAME}] public path: ${__webpack_public_path__}`);
-}

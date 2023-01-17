@@ -1,24 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Cave It renders 1`] = `
-<div
-  className="wrapper"
->
+<div>
   <div
-    className="transformer"
     style={
       Object {
-        "height": 1656.8259587020648,
-        "transform": "translateY(50px)",
+        "height": 2041.1733333333334,
+        "transform": "translateX(-256px) scale(0.3) translateY(200px)",
+        "transformOrigin": "50% 0px",
         "width": 1024,
       }
     }
   >
     <img
-      src="cave.svg"
+      src="cave.png"
       style={
         Object {
-          "height": 1656.8259587020648,
+          "height": 2041.1733333333334,
           "maxWidth": "1000%",
           "width": 1024,
         }
